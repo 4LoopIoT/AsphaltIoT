@@ -1,0 +1,86 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'boostrap' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose install initial load of C:\Users\toatzin\Documents\TEC\Phonegap\AsphaltIoT\package.json
+5 warn package.json phonegap-template-hello-world@1.0.0 license should be a valid SPDX license expression
+6 verbose readDependencies loading dependencies from C:\Users\toatzin\Documents\TEC\Phonegap\AsphaltIoT\package.json
+7 silly cache add args [ 'boostrap', null ]
+8 verbose cache add spec boostrap
+9 silly cache add parsed spec Result {
+9 silly cache add   raw: 'boostrap',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'boostrap',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: 'latest',
+9 silly cache add   type: 'tag' }
+10 silly addNamed boostrap@latest
+11 verbose addNamed "latest" is being treated as a dist-tag for boostrap
+12 info addNameTag [ 'boostrap', 'latest' ]
+13 silly mapToRegistry name boostrap
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/boostrap
+17 verbose addNameTag registry:https://registry.npmjs.org/boostrap not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/boostrap
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 22:15:05
+21 verbose request id 8fab96a97c373ea2
+22 http request GET https://registry.npmjs.org/boostrap
+23 http 404 https://registry.npmjs.org/boostrap
+24 verbose headers { 'content-type': 'application/json',
+24 verbose headers   'cache-control': 'max-age=0',
+24 verbose headers   'content-length': '2',
+24 verbose headers   'accept-ranges': 'bytes',
+24 verbose headers   date: 'Tue, 15 Mar 2016 04:15:08 GMT',
+24 verbose headers   via: '1.1 varnish',
+24 verbose headers   age: '0',
+24 verbose headers   connection: 'keep-alive',
+24 verbose headers   'x-served-by': 'cache-ord1721-ORD',
+24 verbose headers   'x-cache': 'MISS',
+24 verbose headers   'x-cache-hits': '0',
+24 verbose headers   'x-timer': 'S1458015308.634599,VS0,VE303' }
+25 silly get cb [ 404,
+25 silly get   { 'content-type': 'application/json',
+25 silly get     'cache-control': 'max-age=0',
+25 silly get     'content-length': '2',
+25 silly get     'accept-ranges': 'bytes',
+25 silly get     date: 'Tue, 15 Mar 2016 04:15:08 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     age: '0',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-ord1721-ORD',
+25 silly get     'x-cache': 'MISS',
+25 silly get     'x-cache-hits': '0',
+25 silly get     'x-timer': 'S1458015308.634599,VS0,VE303' } ]
+26 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/boostrap
+26 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+26 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:242:14)
+26 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+26 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:199:22)
+26 verbose stack     at emitTwo (events.js:87:13)
+26 verbose stack     at Request.emit (events.js:172:7)
+26 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1036:10)
+26 verbose stack     at emitOne (events.js:82:20)
+26 verbose stack     at Request.emit (events.js:169:7)
+26 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:963:12)
+27 verbose statusCode 404
+28 verbose pkgid boostrap
+29 verbose cwd C:\Users\toatzin\Documents\TEC\Phonegap\AsphaltIoT\www
+30 error Windows_NT 6.3.9600
+31 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "boostrap"
+32 error node v4.4.0
+33 error npm  v2.14.20
+34 error code E404
+35 error 404 Registry returned 404 for GET on https://registry.npmjs.org/boostrap
+35 error 404
+35 error 404 'boostrap' is not in the npm registry.
+35 error 404 You should bug the author to publish it (or use the name yourself!)
+35 error 404 It was specified as a dependency of 'phonegap-template-hello-world'
+35 error 404
+35 error 404 Note that you can also install from a
+35 error 404 tarball, folder, http url, or git url.
+36 verbose exit [ 1, true ]
