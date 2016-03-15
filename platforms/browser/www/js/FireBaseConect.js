@@ -1,4 +1,8 @@
-var glob = {};
+
+
+
+
+
 
 
 function firebaseGet(){
