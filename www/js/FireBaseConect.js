@@ -3,6 +3,26 @@ var fbref;
 var place;
 var area;
 var URLfb = "https://letsparkiot.firebaseio.com/";
+var array = [];
+var counter = 0;
+
+function getPlaces(array){
+	
+	var ref = new Firebase("https://letsparkiot.firebaseio.com/");
+
+	ref.once("value", function(snapshot) {
+	
+  		snapshot.forEach(function(childSnapshot) {
+    		var key = childSnapshot.key();
+    		array[counter] = key;
+    		console.log(array);
+    		counter++;
+  		});
+	});
+
+	console.log(array);
+	//setTimeout(return array,100);
+}
 
 function getPlace(Place){
 	
