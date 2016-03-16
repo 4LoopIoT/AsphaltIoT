@@ -27,18 +27,16 @@ function getSizeArea(){
 	fbref = new Firebase("https://letsparkiot.firebaseio.com/" + place + '/' + area);
 
 	fbref.once("value", function(snapshot) {
-		console.log(snapshot.numChildren());
+		size = snapshot.numChildren();
+		console.log(size);
+
 	});
+
+	return size
 }
 
 
-function getZone(ParkingName){
-	
-	fbref = new Firebase(URLfb + ParkingName);
-	parking = ParkingName;
-  	console.log(URLfb + ParkingName);
-		
-}
+
 
 
 
