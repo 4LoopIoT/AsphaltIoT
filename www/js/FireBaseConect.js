@@ -24,11 +24,10 @@ function getSizeArea(){
 
 	var size;
 
-	fbref = new Firebase("https://letsparkiot.firebaseio.com/ITESM");
+	fbref = new Firebase("https://letsparkiot.firebaseio.com/" + place + '/' + area);
 
 	fbref.once("value", function(snapshot) {
 		console.log(snapshot.numChildren());
- 		console.log(snapshot.child("/General").numChildren());
 	});
 }
 
