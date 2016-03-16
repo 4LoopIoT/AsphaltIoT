@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="Asphalt">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -29,30 +29,35 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/FireBaseConect.js"></script>
-        <title>Hello World</title>
+        <title>Asphalt</title>
     </head>
-    <body>
+    <body ng-controller="dataController" >
         <div class="app">
-            <h1><img src="img/nombre.png" alt="local" style="width:200px;height:80px;"></h1>
-            <!--/*<div id="deviceready" class="blink">*/-->
-                <p class="event received">Device is Ready</p>
-                <form ng-app = "" ng-init = "array = ['valor','valor2']" >
-                  Where are you parking at?<br>
-                  <select name="dLabel" style="width:100%" ng-repeat="x in array">
-                    <option>{{x}}</option>
-                    <option value="volvo">Select:</option>
-                    <option value="saab">Intel</option>
-                    <option value="opel">TEC</option>
-                  </select>
-                  <button class="btn btn-default">
-                    <img src="img/local.png" alt="local" style="width:40px;height:40px;"><br>
-                </button>
-                <button type="button" class="btn btn-default" onclick="getPlaces(['a','b','c'])">Place</button>
+            <!-- <ul id="example-messages" class="example-chat-messages">
+                <li ng-repeat="msg in messages">
+                <strong class="example-chat-username">{{ msg.$id }}</strong>
+                </li>
+                </ul>-->
 
-                </form>
-            </div>
-        </div>
+            <h1><img src="img/nombre.png" alt="local" style="width:200px;height:80px;"> </h1>
+                
+            <form id="Location">
+                Where are you parking at?<br>
+                <select name="dLabel" style="width:100%">
+                <option ng-repeat="plc in places">{{plc.$id}}</option>
+            
+                  </select>
+             </form>
+
+            <form action="stats.html" method="GET">
+                <input type="image" src="img/local.png" width="48" height="48" name="LocationFromSubmit">
+            </form>
+           
+            </div> 
+        </div> 
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

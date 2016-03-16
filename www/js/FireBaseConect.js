@@ -3,11 +3,12 @@ var fbref;
 var place;
 var area;
 var URLfb = "https://letsparkiot.firebaseio.com/";
-var array = [];
-var counter = 0;
 
-function getPlaces(array){
-	
+
+function getPlaces(){
+
+	var counter = 0;
+	var array = [];
 	var ref = new Firebase("https://letsparkiot.firebaseio.com/");
 
 	ref.once("value", function(snapshot) {
@@ -15,13 +16,13 @@ function getPlaces(array){
   		snapshot.forEach(function(childSnapshot) {
     		var key = childSnapshot.key();
     		array[counter] = key;
-    		console.log(array);
     		counter++;
   		});
+  		//console.log(array);
+
+  		return array;
 	});
 
-	console.log(array);
-	//setTimeout(return array,100);
 }
 
 function getPlace(Place){

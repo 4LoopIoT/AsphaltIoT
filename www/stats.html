@@ -1,0 +1,73 @@
+<html ng-app="Asphalt">
+<link href="css/bootstrap.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/stats.css" />
+<script type="text/javascript" src="js/test.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+<script src="js/app.js"></script>
+
+<head>
+</head>
+<body onload="createTable()">
+
+	<div id="container">
+		<div id="header">
+			<h1>Statistics</h1>
+		</div>
+
+		<div id="body" ng-controller="dataController">
+			<div id="stats_list">
+			<form role="form">
+				<div class="form-group stats_form">
+					<select class="form-control" id="sel1">
+						<option ng-repeat="plc in places">{{plc}}</option>
+					</select>
+				</div>
+			</form>
+		</div>
+			<div id="stats_table" class="table-responsive" ng-controller="zoneController">
+
+				<table class="table table-striped stats_table">
+					<thead class="stats_table_thead">
+						<tr>
+							<th>Zones</th>
+							<th>Available Spaces</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="plc in places"> 
+							<td >{{plc.$id}}</td>
+							<td >{{plc.Capacity}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div class=".col-xs-6">
+						<button id="button_stats" type="submit" onclick="stats.html"><img src="img/stats.png"></button>
+						<script type="text/javascript">
+						document.getElementById("button_stats").onclick = function () {
+			        location= "stats.html";
+			      };
+			      </script>
+				</div>
+				<div class=".col-xs-6">
+						<button id="button_map" type="submit" onclick="map.html"><img src="img/map.png"></button>
+						<script type="text/javascript">
+						document.getElementById("button_map").onclick = function () {
+							location= "map.html";
+						};
+						</script>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
