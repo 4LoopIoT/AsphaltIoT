@@ -11,24 +11,36 @@
 
 <head>
 </head>
-<body onload="createTable()">
+<body onload="createTable()" ng-controller="dataController">
 
 	<div id="container">
 		<div id="header">
 			<h1>Statistics</h1>
 		</div>
 
-		<div id="body" ng-controller="dataController">
-			<div id="stats_list">
+		<div id="body">
+			
+			<div id="location_list" >
 			<form role="form">
 				<div class="form-group stats_form">
-					<select class="form-control" id="sel1">
-						<option ng-repeat="plc in places">{{plc}}</option>
+					<select class="form-control" id="sel1" ng-model="mySelectLoc" ng-change="showSelectLocation(mySelectLoc)">
+						<option ng-repeat="loc in locations" >{{loc.$id}}</option>
 					</select>
 				</div>
 			</form>
+
+
+			<div id="stats_list">
+			<form role="form">
+				<div class="form-group stats_form">
+					<select class="form-control" id="sel2" ng-model="mySelectPla" ng-change="showSelectPlace(mySelectPla)">
+						<option ng-repeat="place in places" >{{place.$id}}</option>
+					</select>
+				</div>
+			</form>
+
 		</div>
-			<div id="stats_table" class="table-responsive" ng-controller="zoneController">
+			<div id="stats_table" class="table-responsive">
 
 				<table class="table table-striped stats_table">
 					<thead class="stats_table_thead">
@@ -38,9 +50,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="plc in places"> 
-							<td >{{plc.$id}}</td>
-							<td >{{plc.Capacity}}</td>
+						<tr ng-repeat="zn in zones"> 
+							<td >{{zn.$id}}</td>
+							<td >{{zn.Capacity}}</td>
 						</tr>
 					</tbody>
 				</table>

@@ -1,4 +1,4 @@
-function createTable() {
+/*function createTable() {
     var myTableDiv = document.getElementById("stats_table")
     var table = document.createElement('TABLE')
     table.setAttribute("class", "table table-striped stats_table")
@@ -45,4 +45,4 @@ function createTable() {
         tableBody.appendChild(tr);
     }
     myTableDiv.appendChild(table)
-}
+}*/

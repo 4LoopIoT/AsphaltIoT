@@ -1,30 +1,36 @@
 var myApp = angular.module("Asphalt", ["firebase"]);
-
-//ITESM, INTEL
-		//GENERAL, VISITANTE		
-
+var location;
 
 myApp.controller("dataController", ["$scope", "$firebaseArray",
 	function($scope, $firebaseArray) {
+      var location;
+      var place;
+
+      var ref= new Firebase("https://letsparkiot.firebaseio.com");
+
+      $scope.locations = $firebaseArray(ref);
+      $scope.places;
+      $scope.zones;
+
+
+      $scope.showSelectLocation = function(mySelect) {
+        location = mySelect;
+        $scope.places = $firebaseArray(ref.child(location));
+        console.log(location + " location");
+      }
+
+      $scope.showSelectPlace = function(mySelect) {
+        place = mySelect;
+        $scope.zones = $firebaseArray(ref.child(location).child(place));
+        console.log(place + " Place");
+      }
+    }
           
-          $scope.location = "";
-          $scope.area = "";
-
-          if ( $scope.location === null) {
-          	var ref = new Firebase("https://letsparkiot.firebaseio.com/");
-          	$scope.places = $firebaseArray(ref);
-          } else if ( $scope.location != null && $scope.area === null) {
-          	var ref = new Firebase("https://letsparkiot.firebaseio.com/" + $scope.location);
-          	$scope.places = $firebaseArray(ref);
-          }
-
-
-
-          var ref = new Firebase("https://letsparkiot.firebaseio.com/");
-          $scope.places = $firebaseArray(ref);
-        }
+        
 ]);
 
+
+/*
 myApp.controller("areaController", ["$scope", "$firebaseArray",
 	function($scope, $firebaseArray) {
           var ref = new Firebase("https://letsparkiot.firebaseio.com/ITESM");
@@ -37,4 +43,4 @@ myApp.controller("zoneController", ["$scope", "$firebaseArray",
           var ref = new Firebase("https://letsparkiot.firebaseio.com/ITESM/General");
           $scope.places = $firebaseArray(ref);
         }
-]);
+]);*/
